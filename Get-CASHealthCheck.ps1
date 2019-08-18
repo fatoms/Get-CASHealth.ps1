@@ -323,7 +323,7 @@ foreach ($site in $sites)
 
     foreach ($CAS in $CASinSite)
     {
-        $CASServer = Get-ClientAccessServer $CAS.Name
+        $CASServer = Get-ClientAccessService $CAS.Name
         [string]$AutodiscoverSCP = ($CASServer).AutoDiscoverServiceInternalUri
         $CASAutodiscoverUrl = $AutodiscoverSCP.Replace("/Autodiscover.xml","")
         if (!($SiteAutodiscoverUrls -Contains $CASAutodiscoverUrl)) {$SiteAutodiscoverUrls += $CASAutodiscoverUrl}
